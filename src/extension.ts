@@ -30,22 +30,30 @@ export function activate(context: vscode.ExtensionContext) {
 
 export function deactivate() {}
 
-function detectLanguage(projectPath: string): string | null {
+export function detectLanguage(projectPath: string): string | null {
     const files = fs.readdirSync(projectPath);
     if (files.includes('package.json')) {
         return 'Node.js';
     } else if (files.includes('requirements.txt')) {
         return 'Python';
+    } else if (files.includes('pom.xml') || files.includes('build.gradle')) {
+        return 'Java';
+    } else if (files.includes('index.php') || files.includes('composer.json')) {
+        return 'PHP';
     } else {
         return null;
     }
 }
 
-function generateDockerfile(language: string): string | null {
+export function generateDockerfile(language: string): string | null {
     if (language === 'Node.js') {
         return generateNodejsDockerfile();
     } else if (language === 'Python') {
         return generatePythonDockerfile();
+    } else if (language === 'Java') {
+        return generateJavaDockerfile();
+    } else if (language === 'PHP') {
+        return generatePhpDockerfile();
     } else {
         return null;
     }
@@ -72,5 +80,26 @@ function generatePythonDockerfile(): string {
     COPY . .
     EXPOSE 5000
     CMD ["python", "app.py"]
+    `;
+}
+
+function generateJavaDockerfile(): string {
+    return `
+    FROM openjdk:11
+    WORKDIR /app
+    COPY pom.xml ./
+    RUN mvn dependency:go-offline
+    COPY src ./src
+    RUN mvn package
+    EXPOSE 8080
+    CMD ["java", "-jar", "target/your-app.jar"]
+    `;
+}
+
+function generatePhpDockerfile(): string {
+    return `
+    FROM php:7.4-apache
+    COPY . /var/www/html/
+    EXPOSE 80
     `;
 }
