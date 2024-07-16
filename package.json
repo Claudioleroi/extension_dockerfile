@@ -2,9 +2,9 @@
     "name": "detect-lang-dockerfile",
     "displayName": "Detect Language and Generate Dockerfile",
     "description": "VS Code extension to detect the project's programming language and generate a Dockerfile accordingly.",
-    "version": "0.1.0",
-    "publisher": "Ikamba Claude Cheryl",
-    "author": "Ikamba Claude Cheryl",
+    "version": "0.1.1",
+    "publisher": "IKAMBACLAUDECHERYL",
+    "author": "IKAMBA CLAUDE CHERYL",
     "license": "MIT",
     "engines": {
         "vscode": "^1.75.0"
@@ -44,5 +44,8 @@
         "@vscode/test-electron": "^2.1.0",
         "mocha": "^10.6.0",
         "typescript": "^4.4.0"
-    }
+    },
+
+    "icon": "images/logo.jpeg"
+
 }
