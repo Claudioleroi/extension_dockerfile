@@ -8,17 +8,14 @@ VS Code extension to detect the project's programming language and generate a Do
 - Generates a Dockerfile for Node.js,java,php or Python projects.
 
 ## Installation
-
-
-
-
 ## Action
 
+![Screen Recording 2024-07-16 at 10 25 35](https://github.com/user-attachments/assets/b7487824-994b-47fc-87e7-c6516b86d7ef)
 
-<video width="320" height="240" controls>
-  <source src="images/Screen Recording 2024-07-16 at 10.25.35.gif" type="video/gif">
-  Your browser does not support the video tag.
-</video>
+
+
+
+
 
 1. Clone the repository:
    ```sh
