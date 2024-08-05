@@ -10,8 +10,7 @@ VS Code extension to detect the project's programming language and generate a Do
 ## Installation
 ## Action
 
-![Screen Recording 2024-07-16 at 10 25 35](https://github.com/user-attachments/assets/b7487824-994b-47fc-87e7-c6516b86d7ef)
-
+![demo](https://github.com/user-attachments/assets/3c95f805-19ca-4642-afc9-aef979310c64)
 
 
 
